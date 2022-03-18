@@ -3,7 +3,7 @@ import { Context } from "..";
 import { toast } from "react-toastify";
 
 const LoginP = () => {
-  const { token, setToken } = useContext(Context);
+  const { setToken } = useContext(Context);
 
   const [data, setArr] = useState([]);
   const [obj, setObj] = useState({ name: "", number: "" });
@@ -26,7 +26,7 @@ const LoginP = () => {
       document.querySelector("#number").value
     ) {
       if (localStorage.getItem("data")) {
-        if (localStorage.getItem("data").length != 0) {
+        if (localStorage.getItem("data").length !== 0) {
           console.log(JSON.parse(localStorage.getItem("data")));
 
           let a = [...JSON.parse(localStorage.getItem("data")), ...data];

@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "..";
 import { useContext } from "react";
-import Cards from "../comps/Cards";
 
 import {
   Button,
@@ -14,7 +13,6 @@ import {
   ModalHeader,
 } from "reactstrap";
 import RChartJs from '../comps/RChartJs'
-import uuid from 'react-uuid'
 import { CategoryCard } from "../comps";
 
 const SpecifiCategoryP = (props) => {
@@ -28,7 +26,8 @@ const SpecifiCategoryP = (props) => {
     setCost,
     takeDesc,
     button,
-    chartArr,
+    setChartArr,
+    // chartArr,
     dateD
   } = useContext(Context);
 
@@ -45,14 +44,15 @@ const SpecifiCategoryP = (props) => {
       setCost({ category: categories[0].name, dateTime: dateD });
     } else {
       props.closeModal();
-      const change = costs.find((item) => item.desc == takeDesc);
+      const change = costs.find((item) => item.desc === takeDesc);
       setCost({ category: categories[0].name, dateTime: dateD});
 
       change.price = cost.price;
       change.desc = cost.desc;
       change.dateTime = cost.dateTime;
       change.category = cost.category;
-      chartArr = costs.map((item) => item.price);
+      // chartArr = costs.map((item) => item.price);
+      setChartArr(costs.map((item) => item.price))
     }
 
   };
@@ -63,10 +63,10 @@ const SpecifiCategoryP = (props) => {
 <div className="row justify-content-center py-3">
         <div className="col-12 " style={{ height: "200px" }}>
           <RChartJs data={costs
-        .filter((item) => item.category == params.obj).map((item) => item.price * 1)} />
+        .filter((item) => item.category === params.obj).map((item) => item.price * 1)} />
 </div></div>
       {costs
-        .filter((item) => item.category == params.obj)
+        .filter((item) => item.category === params.obj)
         .map((item) => (
           <CategoryCard 
             edit={props.edit}

@@ -1,5 +1,5 @@
 import React from "react";
-import { CategoryCard, OpertCard } from "../comps";
+import { OpertCard } from "../comps";
 import { useContext } from "react";
 import { Context } from "..";
 

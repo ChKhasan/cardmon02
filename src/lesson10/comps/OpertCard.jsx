@@ -19,7 +19,7 @@ const OpertCard = (props) => {
             className="mx-3"
             color="danger"
             onClick={() => {
-              setCosts(costs.filter((item) => item.id != props.id));
+              setCosts(costs.filter((item) => item.id !== props.id));
             }}
           >
             delete

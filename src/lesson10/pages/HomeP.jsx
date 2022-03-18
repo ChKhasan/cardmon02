@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, {  useContext } from "react";
 
 import {
   Button,
@@ -24,17 +24,16 @@ const HomeP = (props) => {
     costs,
     setCosts,
     isOpen,
-    setIsOpen,
+
     cost,
     setCost,
     takeDesc,
-    setTakeDesc,
+ 
     button,
     setButton,
-    chartArr,
+    // chartArr,
     setChartArr,
-    operat,
-    setOperat,
+
     isExist,
     setIsExist,
     dateD
@@ -88,7 +87,7 @@ const HomeP = (props) => {
     
     } else {
       props.closeModal();
-      const change = costs.find((item) => item.desc == takeDesc);
+      const change = costs.find((item) => item.desc === takeDesc);
       setCost({category: categories[0].name ,dateTime: dateD});
 
       change.price = cost.price;
@@ -96,7 +95,8 @@ const HomeP = (props) => {
       change.dateTime = cost.dateTime;
       change.category = cost.category;
 
-      chartArr = costs.map((item) => item.price);
+      // chartArr = ;
+      setChartArr(costs.map((item) => item.price))
     }
 
   };
@@ -104,7 +104,7 @@ const HomeP = (props) => {
 
 
   const handleChange = (e) => {
-    if (e.target.name == "dateTime") {
+    if (e.target.name === "dateTime") {
       setCost({ ...cost, [e.target.name]: e.target.value });
     } else {
       setCost({ ...cost, [e.target.name]: e.target.value });

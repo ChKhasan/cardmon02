@@ -21,7 +21,7 @@ const SignIn = () => {
 const click = () => {
 
     if (localStorage.getItem('data')) {
-            if (localStorage.getItem('data').length != 0) {
+            if (localStorage.getItem('data').length !== 0) {
                 console.log(JSON.parse(localStorage.getItem("data")))
                 console.log(data)
                 let  a = [

@@ -17,7 +17,7 @@ const Cards = (props) => {
             className="mx-3"
             color="danger"
             onClick={() => {
-              props.setCosts(props.costs.filter((item) => item.id != props.id));
+              props.setCosts(props.costs.filter((item) => item.id !== props.id));
             }}
           >
             delete
