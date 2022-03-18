@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+body {
+  padding: 100px 100px;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.active {
+  color: red !important;
+
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+
+.ml-20 {
+  margin-left: 20px;
+}
+.new_card {
+position: relative;
+background: white;
+padding: 10px;
+padding-right: 40px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 12px;
+/* border: px solid red; */
+}
+
+.abs_edit {
+position: absolute;
+border-radius: 50%;
+width: 58px !important;
+height: 58px !important;
+right: -25px;
+cursor: pointer;
+background: red !important;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 13 !important;
+}
+.abs_edit p {
+  z-index: 12;
+  color: white;
+}
+.abs_edit::after {
+  content: '';
+position: absolute;
+border-radius: 50%;
+  
+  width: 54px !important;
+height: 54px !important;
+background: white;
+z-index: 10;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.abs_edit::before{
+  content: '';
+position: absolute;
+border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px !important;
+height: 50px !important;
+background: red;
+z-index: 11;
+
+}
+p {
+  margin-bottom: 0 !important;
+}
+.signup {
+  display: none;
+}
+.signin {
+  display: flex;
+}
+.recharts-responsive-container {
+  height: 230px !important;
+  
+}

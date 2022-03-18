@@ -1,0 +1,8 @@
+.innerContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+.cardOut {
+    flex: 25%;
+    max-width: 25%;
+}
